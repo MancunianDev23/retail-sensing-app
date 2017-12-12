@@ -1,0 +1,17 @@
+<ion-content padding ng-app="myApp" class="has-header">
+	<br />
+	<ion-img class="app_title" src="img/title.png"></ion-img>
+		<br /><br /><br />
+		<ion-img class="title" src="img/categories.png"></ion-img>
+		<br />
+	    <div class="section">
+			<ion-list>
+				<button ion-button *ngFor="let categ of categs" color="dark" style="text-align:left;" class="buttons" (click)="openReportingPage(categ)">
+				  {{ categ.category }}
+				</button><br />
+			</ion-list>
+		</div>
+</ion-content>
+<ion-footer class="footer" style="position:absolute; bottom:0; height:0px;">
+	<ion-navbar color="dark" swipeBackEnabled="true"></ion-navbar>
+</ion-footer>

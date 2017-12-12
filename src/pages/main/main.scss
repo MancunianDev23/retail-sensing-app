@@ -1,0 +1,38 @@
+page-main {
+	.header{
+		background-color:#1A1A1A;
+	}
+	.section{width:25%; position:relative; margin-left:auto; margin-right:auto;}
+	.title{
+		position:relative; 
+		height:35px;
+		width:140px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.buttons{width:100%;}
+	@media screen and(min-width:500px)and(max-width:863px) {
+		.section{width:40%; position:relative; margin-left:auto; margin-right:auto; }
+	}
+	
+	@media screen and(max-width:499px) {
+		.title{ 
+			position:relative; 
+			height:35px;
+			width:140px;
+			margin-left:-7px;
+		}
+		.section{width:100%; position:relative; margin-left:auto; margin-right:auto; }
+		.buttons{width:100%;}
+	}
+	@media screen and(min-width:401px) and (max-width:499px) {
+		.title{
+			position:relative; 
+			height:35px;
+			width:140px;
+			margin-left: auto;
+		margin-right: auto;
+		}
+	}
+}

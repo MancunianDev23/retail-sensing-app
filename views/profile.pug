@@ -1,0 +1,74 @@
+extends navigation.pug
+
+block append stylesheets
+    link(rel='stylesheet', href="/../css/profile.css")
+    link(rel='icon', type="image/x-icon", href="images/user.ico")
+block append body-content
+    div.content-section.container
+        .row
+            .col-xs-12.col-sm-12.col-md-7.col-lg-12.profile-section
+                .profile-wrapper
+                    p.profile-label
+                        span.fa.fa-user.fa-fw
+                        |  Username
+                    p(class="profile-value" id="profile-username")
+                    br
+
+                    p.profile-label
+                        span.fa.fa-envelope.fa-fw
+                        |  Email
+                    p(class="profile-value" id="profile-email")
+                    br
+
+                    p.profile-label
+                        span.fa.fa-user-md.fa-fw
+                        |  Role
+                    p(class="profile-value" id="profile-role")
+                    br
+
+                    p.profile-label
+                        span.fa.fa-exclamation-circle.fa-fw
+                        |  Privileges
+                    p(class="profile-value" id="profile-priviliges")
+                    br
+
+                    hr
+                    //Change Password Form
+                    form#change-password-form(action="/change-password", method="POST", name="change-password")
+                        p.profile-label
+                            span.fa.fa-unlock-alt.fa-fw
+                            |  Current Password
+                        input#current-password.form-control.profile-field(type="password" placeholder="Current Password" name="currentPassword" data-toggle="tooltip" data-placement="right" required)
+                        br
+
+                        p.profile-label
+                            span.fa.fa-lock.fa-fw
+                            |  New Password
+                        input#new-password.form-control.profile-field(type="password" placeholder="New Password" name="newPassword" data-toggle="tooltip" data-placement="right" required)
+                        br
+
+                        p.profile-label
+                            span.fa.fa-lock.fa-fw
+                            |  Confirm Password
+                        input#confirm-password.form-control.profile-field(type="password" placeholder="Confirm Password" name="confirmPassword" data-toggle="tooltip" data-placement="right" required)
+                        img#valid-pass-icon(src="../img/icons/valid_pass.png")
+                        button#change-password.btn.btn-info.btnlg(type="submit") Change Password
+    .padding-spacer
+block append scripts
+    script(type='text/javascript').
+        document.getElementById('profile-username').innerHTML = "!{username}";
+        document.getElementById('profile-email').innerHTML = "!{email}";
+        var role = (("!{role}".length > 0) ? "!{role}" : null);
+        if (role && role == "admin") {
+            $('#profile-priviliges').html("You have access to all databases.");
+        } else {
+            $('#profile-priviliges').html("You have access to the !{database} database.");
+
+        }
+        $('#profile-role').html(role.substring(0, 1).toUpperCase() + role.substring(1, role.length));
+        var userDatabase = "!{database}";
+        var docCount = "!{documentCount}";
+    script(src="https://d3js.org/d3.v4.js")
+    script(src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js")
+    script(src="../javascripts/dashboard/graphs/profile/profile-pie.js")
+    script(src="../js/profile.js")

@@ -1,0 +1,41 @@
+doctype html
+html.no-js(lang='en')
+  head
+    meta(charset='utf-8')
+    title User Login - Retail Sensing
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    //Favicon
+    link(rel="icon" href="/../img/favicon.ico" type="image/x-icon")
+    // CSS
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=PT+Sans:400,700')
+    //link(rel='stylesheet', href='css/reset.css')
+    link(rel='stylesheet', href='css/login.css')
+    // Javascript
+    script(src='js/jquery-1.8.2.min.js')
+    script(src='js/scripts.js')
+    
+  body
+    .page-container
+      a(href='/')
+        img(border='0', alt='Urban Sensing Logo', src='/img/retailsensing.gif' width="140px" height="110px")
+      h1 Retail Sensing
+      div#loginBox
+        h2 User Login
+        form(action='/login', method='POST')
+          .error
+            if (message != "")
+              script(type="text/javascript").
+                $('.error').css("visibility", "visible");
+              p.error_message #{message}
+          h3 Username
+          input.username(type='text', name='username')
+          h3 Password
+          input.password(type='password', name='password')
+          button(type='submit') Sign In
+          p Haven't got an account? Get in touch.
+          p Email: sales@retailsensing.com
+          p Tel: +44 (0)161 839 6437
+      br
+

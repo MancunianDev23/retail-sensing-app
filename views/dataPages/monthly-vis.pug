@@ -1,0 +1,14 @@
+extends dataNavigation.pug
+block append stylesheets
+    link(rel='icon', type="image/x-icon", href='images/icons/usl-favicon_128x128.ico')
+
+block append body-content
+    header.intro
+        .intro-body
+            .container
+                .row
+                    .col-md-8.col-md-offset-2
+                        img(src='/img/usl.png', alt='Responsive image', width='200px', height='400px')
+                        p.intro-text Connecting the urban landscape with smart infrastructure
+                        a.btn.btn-circle.page-scroll(href='#about')
+                            i.fa.fa-angle-double-down.animated

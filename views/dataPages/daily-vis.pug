@@ -1,0 +1,198 @@
+extends dataNavigation.pug
+
+block append stylesheets
+    link(rel='icon', type="image/x-icon", href='../images/icons/usl-favicon_128x128.ico')
+    style(type="text/css").
+        .bar {
+          fill: steelblue;
+        }
+
+        .bar:hover {
+          fill: brown;
+        }
+
+        .axis--x path {
+          display: none;
+        }
+block append body-content
+    .content-section.container
+        .row
+            form.dataForm(action="/dashboard/journeys/journey-report" method="GET" target="_blank")
+                //SELECT DATE RANGE
+                .container.menu-header
+                    p.collapse-filter.chevron(data-toggle="collapse" href="#date-filter-wrapper")
+                        span.glyphicon.glyphicon-chevron-up
+                        |  SELECT DATE RANGE
+                .container.menu-body.panel-collapse.collpase.in#date-filter-wrapper
+                    .row.padding-wrapper   
+                        .col-lg-6.col-md-6.col-xl-offset-1
+                            p.text From:
+                            select#date-from.select-menu(name="date_from")
+                                option(value="1") 1
+                                option(value="2") 2
+                                option(value="3") 3
+                                option(value="4") 4
+                                option(value="5") 5
+                                option(value="6") 6
+                                option(value="7") 7
+                                option(value="8") 8
+                                option(value="9") 9
+                                option(value="10") 10
+                                option(value="11") 11
+                                option(value="12") 12
+                                option(value="13") 13
+                                option(value="14") 14
+                                option(value="15") 15
+                                option(value="16") 16
+                                option(value="17") 17
+                                option(value="18") 18
+                                option(value="19") 19
+                                option(value="20") 20
+                                option(value="21") 21
+                                option(value="22") 22
+                                option(value="23") 23
+                                option(value="24") 24
+                                option(value="25") 25
+                                option(value="26") 26
+                                option(value="27") 27
+                                option(value="28") 28
+                                option(value="29") 29
+                                option(value="30") 30
+                                option(value="31") 31
+                            select#month-from.select-menu(name="month_from")
+                                option(value="1" name="1") January
+                                option(value="2" name="2") February
+                                option(value="3" name="3") March
+                                option(value="4" name="4") April
+                                option(value="5" name="5") May
+                                option(value="6" name="6") June
+                                option(value="7" name="7") July
+                                option(value="8" name="8") August
+                                option(value="9" name="9") September
+                                option(value="10" name="10") October
+                                option(value="11" name="11") November
+                                option(value="12" name="12") December
+                            select#year-from.select-menu(name="year_from")
+                                option(value="2017") 2017
+                                option(value="2016") 2016
+                                option(value="2015") 2015
+                                option(value="2014") 2014       
+                                option(value="2013") 2013
+                                option(value="2012") 2012
+                                option(value="2011") 2011
+                                option(value="2010") 2010
+                                option(value="2009") 2009
+                                option(value="2008") 2008
+                                option(value="2007") 2007
+                                option(value="2006") 2006
+                                option(value="2005") 2005
+                                option(value="2004") 2004
+                                option(value="2003") 2003
+                                option(value="2002") 2002
+                                option(value="2001") 2001
+                                option(value="2000") 2000
+                            br
+                            br
+                            .single-day
+                                input#single-day(type="checkbox" onclick="toggleToFilter();")
+                                label(for="single-day")
+                            p.text#to To:
+                            select#date-to.select-menu(name="date_to")
+                                option(value="1") 1
+                                option(value="2") 2
+                                option(value="3") 3
+                                option(value="4") 4
+                                option(value="5") 5
+                                option(value="6") 6
+                                option(value="7") 7
+                                option(value="8") 8
+                                option(value="9") 9
+                                option(value="10") 10
+                                option(value="11") 11
+                                option(value="12") 12
+                                option(value="13") 13
+                                option(value="14") 14
+                                option(value="15") 15
+                                option(value="16") 16
+                                option(value="17") 17
+                                option(value="18") 18
+                                option(value="19") 19
+                                option(value="20") 20
+                                option(value="21") 21
+                                option(value="22") 22
+                                option(value="23") 23
+                                option(value="24") 24
+                                option(value="25") 25
+                                option(value="26") 26
+                                option(value="27") 27
+                                option(value="28") 28
+                                option(value="29") 29
+                                option(value="30") 30
+                                option(value="31") 31
+                            select#month-to.select-menu(name="month_to")
+                                option(value="1" name="1") January
+                                option(value="2" name="2") February
+                                option(value="3" name="3") March
+                                option(value="4" name="4") April
+                                option(value="5" name="5") May
+                                option(value="6" name="6") June
+                                option(value="7" name="7") July
+                                option(value="8" name="8") August
+                                option(value="9" name="9") September
+                                option(value="10" name="10") October
+                                option(value="11" name="11") November
+                                option(value="12" name="12") December
+                            select#year-to.select-menu(name="year_to")
+                                option(value="2017") 2017
+                                option(value="2016") 2016
+                                option(value="2015") 2015
+                                option(value="2014") 2014       
+                                option(value="2013") 2013
+                                option(value="2012") 2012
+                                option(value="2011") 2011
+                                option(value="2010") 2010
+                                option(value="2009") 2009
+                                option(value="2008") 2008
+                                option(value="2007") 2007
+                                option(value="2006") 2006
+                                option(value="2005") 2005
+                                option(value="2004") 2004
+                                option(value="2003") 2003
+                                option(value="2002") 2002
+                                option(value="2001") 2001
+                                option(value="2000") 2000
+                //SELECT TIME RANGE
+                .container.menu-header
+                    p.collapse-filter.chevron(data-toggle="collapse" href="#time-filter-wrapper")
+                        span.glyphicon.glyphicon-chevron-down
+                        |  SELECT TIME RANGE
+                .container.menu-body.collapse
+                    .row.padding-wrapper
+                        .col-md-6.col-lg-6.col-lg-offset-4
+                            .zero-val
+                                input#includeTimeFilter(type="checkbox")
+                                label(for="includeTimeFilter")
+                            p.text#filter-by-time Filter My Selection By Time
+                            br
+                            label.wickedpicker-label(for="time-from") From:
+                            input#time-from.timepicker(type="text" name="timepicker_from")
+                            br
+                            label.wickedpicker-label.time-to-label(for="time-to") To:
+                            input(type="text" id="time-to" name="timepicker_to" class="timepicker")
+                .container.menu-body.panel-collapse.collpase.in#stop_map_wrapper
+                    .row
+                        p Graph
+                        svg(width="960" height="500")
+block append scripts
+    // D3.js link
+    script(src="https://d3js.org/d3.v4.js")
+    script(type="text/javascript").
+        var data = !{data};
+        console.log(data);
+        var pageData;
+        $('.chevron').click(function() {
+            $(this).find('span').toggleClass('glyphicon-chevron-down').toggleClass('glyphicon-chevron-up');
+        });
+    // Graph (+ data filtering)
+    //script(src="../js/data-vis/daily/filterData.js")
+    script(src="../js/data-vis/daily/daily_graph.js")

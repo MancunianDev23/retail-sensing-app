@@ -1,0 +1,58 @@
+page-reporting {
+	p{text-align:center; color:#FCDD00; font-size:20px;}
+	.section{width:27%; position:relative; left:38%; text-align: center;}
+	.location{position:relative;}
+	.type{text-align:left;}
+	.buttons{width:100%;}
+	
+	
+	@media screen and(min-width:1200px) and(max-width:1300px) {
+		.section{width:30%; position:relative; left:36%; text-align: center;}
+	}
+	@media screen and(min-width:1100px) and(max-width:1200px) {
+		.section{width:32%; position:relative; left:35%; text-align: center;}
+	}
+	
+	@media screen and(min-width:997px) and(max-width:1100px) {
+		.section{width:35%; position:relative; left:33%; text-align: center;}
+	}
+	
+	@media screen and(min-width:906px) and(max-width:996px) {
+		.section{width:40%; position:relative; left:31%; text-align: center;}
+	}
+	
+	@media screen and(min-width:808px) and(max-width:905px) {
+		.section{width:42%; position:relative; left:29%; text-align: center;}
+	}
+	
+	@media screen and(min-width:701px) and(max-width:807px) {
+		.section{width:42%; position:relative; left:25%; text-align: center;}
+	}
+	
+	@media screen and(min-width:601px) and(max-width:700px) {
+		.section{width:51%; position:relative; left:22%; text-align: center;}
+	}
+	
+	@media screen and(min-width:545px) and(max-width:600px) {
+		.section{width:63%; position:relative; left:17%; text-align: center;}
+	}
+	
+	@media screen and(min-width:528px) and(max-width:544px) {
+		.section{width:74%; position:relative; left:14%; text-align: center;}
+	}
+	
+	@media screen and(min-width:501px) and(max-width:527px) {
+		.section{width:79%; position:relative; left:12%; text-align: center;}
+	}
+	
+	@media screen and(min-width:440px) and(max-width:500px) {
+		.section{width:82%; position:relative; left:8%; text-align: center;}
+	}
+	@media screen and(min-width:401px) and(max-width:439px) {
+		.section{width:87%; position:relative; left:2%; text-align: center;}
+	}
+	@media screen and(max-width:400px) {
+	.section{width:100%; position:relative; left:0%; text-align: center;}
+	.buttons{width:100%;}
+	}
+}

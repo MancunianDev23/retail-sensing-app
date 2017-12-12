@@ -1,0 +1,41 @@
+page-home {
+	.app_img{
+		position:relative;
+		top:5%;
+		width:500px;
+		height:230px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.app1{position:relative; text-align:center; top:20%;}
+	.tabs {display:none;}
+	
+	@media screen and (min-aspect-ratio: 1/1) and (max-width:1200px) {
+		.app_img{
+			width:300px;
+			height:135px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	@media screen and (min-width: 500px) and (max-width:776px) {
+	.app_img{
+			width:250px;
+			height:115px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	@media screen and(max-width:499px) {
+	.app_img{
+			width:220px;
+			height:100px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

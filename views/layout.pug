@@ -1,0 +1,144 @@
+doctype html
+html(lang="en")
+	head
+		title='Urban Sensing'
+		link(rel='icon', type="image/x-icon", href='images/icons/favicon.ico')
+		block head-meta
+			meta(name='viewport', content='width=device-width, initial-scale=1')
+			meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+			title !{title}
+		block fonts
+			link(rel='stylesheet', type='text/css', href='vendor/font-awesome/css/font-awesome.min.css')
+			link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic')
+			link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Montserrat:400,700')
+		block stylesheets
+			link(rel='stylesheet', type='text/css', href='vendor/bootstrap/css/bootstrap.min.css')
+			link(rel='stylesheet', type='text/css', href='css/style.css')
+			//link(rel='stylesheet', type='text/css', href='css/grayscale.min.css')
+			link(rel='stylesheet', type='text/css', href='stylesheets/footer.css')
+	body#page-top(data-spy='scroll', data-target='.navbar-fixed-top')
+		block navigation
+			nav.navbar.navbar-custom.navbar-fixed-top(role='navigation')
+				.container
+					.navbar-header
+						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main-collapse')
+							| Menu
+							i.fa.fa-bars
+						a.navbar-brand.page-scroll(href='/')
+							i.fa.fa-play-circle
+							span.light Urban
+							|  Sensing Limited
+					.collapse.navbar-collapse.navbar-right.navbar-main-collapse
+						ul.nav.navbar-nav
+							li.hidden
+								a(href='#page-top')
+							li
+								a.page-scroll(href='#about')
+									span.fa.fa-info-circle.fa-fw
+									|  About
+							li
+								a.page-scroll(href='#download')
+									span.fa.fa-bar-chart.fa-fw
+									|  Services
+							li
+								a.page-scroll(href='#contact') 
+									span.fa.fa-phone.fa-fw
+									|  Contact
+							li
+								a.page-scroll(href="/bus-app")
+									span.fa.fa-bus.fa-fw 
+									|  Bus App
+							li
+								a#login-username.dropdown-toggle(href='/login')
+									ul.dropdown-menu.login-menu
+										li
+											a(href='/profile')
+												span.fa.fa-user-md.fa-fw
+												|  My Profile
+										li
+											a(href='/dashboard')
+												span.fa.fa-dashboard.fa-fw
+												|  Dashboard
+										li
+											a(href='/signout')
+												span.fa.fa-sign-out.fa-fw
+												|  Logout
+		block body-content
+		block footer-content
+			footer
+				.container.footer-container
+					.row
+						.col-lg-2.col-lg-offset-3
+							p.footer-heading Social Media
+							p.footer-text
+								span.fa.fa-facebook.fa-fw
+								|  urban-sensing
+							p.footer-text
+								span.fa.fa-twitter.fa-fw
+								|  @urbansensingltd
+							p.footer-text
+								span.fa.fa-google-plus.fa-fw
+								|  UrbanSensingLtd
+							p.footer-text
+								span.fa.fa-mouse-pointer.fa-fw
+								|  urbansensingltd.com
+							p.footer-text
+								span.fa.fa-github.fa-fw
+								|  urban-sensing
+						.col-lg-2
+							p.footer-heading Site Navigation
+							a(href="/")
+								p.footer-text
+									span.fa.fa-home.fa-fw
+									|  Home
+							a(href="/dashboard")
+								p.footer-text
+									span.fa.fa-dashboard.fa-fw
+									|  Dashboard
+							a(href="/#services")
+								p.footer-text
+									span.fa.fa-wrench.fa-fw
+									|  Services
+							a(href="/login")
+								p.footer-text
+									span.fa.fa-sign-in.fa-fw
+									|  Sign In
+							a(href="/contact")
+								p.footer-text
+									span.fa.fa-phone.fa-fw
+									|  Contact
+						.col-lg-3
+							p.footer-heading Having Problems?
+							p.footer-text
+								span.fa.fa-filter.fa-fw
+								|  Double check your filter
+							p.footer-text
+								span.fa.fa-wifi.fa-fw
+								|  Check your connection
+							p.footer-text
+								span.fa.fa-undo.fa-fw
+								|  Refresh the page
+							p.footer-text
+								span.fa.fa-window-maximize.fa-fw
+								|  Maximise your window
+							p.footer-text
+								span.fa.fa-chrome.fa-fw
+								|  Try another browser
+					.row.copyright
+						p.text-center.footer-text
+							span#us-icon.fa.fa-play-circle
+							|  Urban Sensing &copy; 2017. All rights reserved.
+		block scripts
+			script(src='vendor/jquery/jquery.js')
+			script(src='vendor/bootstrap/js/bootstrap.min.js')
+			script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+			script(src='js/grayscale.min.js')
+			script(src='javascripts/dropdown.js')
+			script(type='text/javascript').
+				var user = "!{username}";
+				console.log(user);
+				$('#login-username').html(user);
+				if ("!{username}" != "<span class='fa fa-sign-in fa-fw'></span>&nbsp; Login") { //If Logged In
+					$('.login-menu, .login-menu li').css({'visibility': 'visible'});
+					$('#login-username').attr("data-toggle", "dropdown");
+				}

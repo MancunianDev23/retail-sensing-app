@@ -1,0 +1,184 @@
+doctype html
+html(lang="en")
+	head
+		block head-meta
+			meta(name='viewport', content='width=device-width, initial-scale=1')
+			meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+			link(rel='icon', type="image/x-icon", href='images/icons/favicon.ico')
+			title !{title}
+		block fonts
+			link(rel='stylesheet', type='text/css', href='vendor/font-awesome/css/font-awesome.min.css')
+			link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic')
+			link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Montserrat:400,700')
+		block stylesheets
+			link(rel='stylesheet', type='text/css', href='vendor/bootstrap/css/bootstrap.min.css')
+			link(id='mainStyle', rel='stylesheet', type='text/css', href='css/style.css')
+			link(id='smallNav', rel='stylesheet', type='text/css', href='css/smallNav.css')
+			link(rel='stylesheet', type='text/css', href='css/footer.css')
+	body#page-top(data-spy="scroll" data-target=".navbar" data-offset="50")
+		block navigation
+			//nav.navbar.navbar-default
+			//navbar navbar-default navbar-static-top
+			nav#navigationb.navbar.navbar-default.navbar-static-top(role='navigation' data-spy="affix" data-offset-top="60")
+				.navbar-header
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main-collapse')
+						| Menu 
+						i.fa.fa-bars
+					a.navbar-brand.page-scroll(href='/')
+						span
+							img.logo.pull-left(src="img/retailsensing.gif" )
+							//height="100px" width="140px"
+							h3.navbar-text#company Retail Sensing
+								br
+								| PEOPLE COUNTING SYSTEMS
+				.collapse.navbar-collapse.navbar-main-collapse
+					//.navbar-right
+					ul#nav-list.nav.navbar-nav
+						li.hidden
+							a(href='#page-top')
+						li.dropdown
+							a.dropdown-toggle(data-toggle="dropdown")
+								span
+								|  Visitor Data 
+								i.fa.fa-caret-down
+							ul.dropdown-menu
+								li
+									a(href='/index/daily-count')
+										span
+										|  Daily Count
+								li
+									a(href='/index/weekly-count')
+										span
+										|  Weekly Count
+								li
+									a(href='/index/monthly-count')
+										span
+										|  Monthly Count
+						li
+							a.page-scroll(href='/index/real-time')
+								span
+								|  Real Time Data
+						li
+							a.page-scroll(href='/index/conversion') 
+								span
+								|  Conversion Ratio
+						li
+							a.page-scroll(href="/reporting-app")
+								span
+								|  Reporting App
+						li
+							a#login-username.dropdown-toggle(href='/login') 
+								span.fa.fa-sign-in.fa-fw
+								| Login
+							ul.dropdown-menu(style="right: -31px; left: auto;")
+								li
+									a(href='/profile')
+										|  My Profile
+								li
+									a(href='/signout')
+										|  Logout
+		block body-content
+		block footer-content
+			footer.footer-distributed
+				.footer-left
+					p.footer-heading Site Navigation
+					p.footer-links
+						a(href="/index") Home
+						|     		·
+						a(href="/index/real-time") Real Time Data
+						|     		·
+						a(href="/index/conversion") Conversion Ratio
+						|     		·
+						a(href="/reporting-app") Reporting App
+					p.footer-company-name Retail Sensing &copy; 2017. All rights reserved.
+				.footer-center
+					div
+						i.fa.fa-map-marker
+						p
+							span 10 Stocks Street
+							|  Manchester, M88QG Great Britain
+					div
+						i.fa.fa-phone
+						p +44 (0)161 839 6437
+					div
+						i.fa.fa-envelope
+						p
+						p sales@retailsensing.com
+				.footer-right
+					p.footer-company-about
+						span About the company
+						|     	Measure usage of retail space. Real-time integration with POS database. Gain retail intelligence and analytics.
+					.footer-icons
+						a(href="https://en-gb.facebook.com/RetailSensing/")
+							i.fa.fa-facebook
+						a(href="https://twitter.com/retailsensing?lang=en")
+							i.fa.fa-twitter
+						a(href="https://uk.linkedin.com/company/retail-sensing-ltd-")
+							i.fa.fa-linkedin
+						a(href="www.retailsensing.com")
+							i.fa.fa-mouse-pointer
+
+			//footer.navbar-default
+				.container.footer-container
+					.row
+						.col-lg-3.col-lg-offset-3
+							p.footer-heading Social Media
+							p.footer-text
+								span.fa.fa-facebook.fa-fw
+								|  Retail Sensing
+							p.footer-text
+								span.fa.fa-twitter.fa-fw
+								|  @RetailSensing
+							p.footer-text
+								span.fa.fa-google-plus.fa-fw
+								|  Retail Sensing
+							p.footer-text
+								span.fa.fa-mouse-pointer.fa-fw
+								|  www.retailsensing.com
+						.col-lg-3
+							p.footer-heading Site Navigation
+							a(href="/")
+								p.footer-text
+									span.fa.fa-home.fa-fw
+									|  Home
+							a(href="/daily")
+								p.footer-text
+									span.fa.fa-phone.fa-fw
+									|  Daily Visitor Count
+							a(href="/weekly")
+								p.footer-text
+									span.fa.fa-phone.fa-fw
+									|  Weekly Visitor Count
+							a(href="/monthly")
+								p.footer-text
+									span.fa.fa-phone.fa-fw
+									|  Monthly Visitor Count
+							a(href="/dashboard")
+								p.footer-text
+									span.fa.fa-dashboard.fa-fw
+									|  Real Time
+							a(href="/#services")
+								p.footer-text
+									span.fa.fa-wrench.fa-fw
+									|  Conversion Ratio
+							a(href="/login")
+								p.footer-text
+									span.fa.fa-sign-in.fa-fw
+									|  Reporting App
+					.row.copyright
+						p.text-center.footer-text
+							span#us-icon.fa.fa-play-circle
+							|  Retail Sensing &copy; 2017. All rights reserved.
+		block scripts
+			script(src='js/jquery-3.2.1.min.js')
+			script(src='vendor/bootstrap/js/bootstrap.min.js')
+			script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+			script(src="/js/affixNav.js")
+			script(type='text/javascript').
+				var user = "!{username}";
+				console.log(user);
+				$('#login-username').html(user+" <i class='fa fa-caret-down'></i>");
+				if ("!{username}" != "<span class='fa fa-sign-in fa-fw'></span>&nbsp; Login") { //If Logged In
+					$('.login-menu, .login-menu li').css({'visibility': 'visible'});
+					$('#login-username').attr("data-toggle", "dropdown");
+				}

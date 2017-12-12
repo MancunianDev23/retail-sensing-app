@@ -1,0 +1,110 @@
+extends navigation.pug
+
+block append stylesheets
+    link(rel='stylesheet', href="/../stylesheets/register.css")
+
+block append body-content
+    .nav-spacer
+    .container
+        .col-lg-8.col-sm-8.registration-wrapper
+            .row 
+                .col-sm-12.registration-header
+                    p Client Registration
+            .row.main
+                .main-login.main-center.col-lg-8.col-md-8
+                    form.registration-form(method="POST", action="/admin/register")
+                        .form-group
+                            p.control-label Username
+                            .cols-sm-10
+                                .input-group
+                                    span.input-group-addon
+                                        i#username-icon.fa.fa-user.fa-fw.invalid-icon(aria-hidden='true')
+                                    input#username.form-control(type='text', name='username' required)
+                        .form-group
+                            p.control-label Email  Address
+                            .cols-sm-10
+                                .input-group
+                                    span.input-group-addon
+                                        i#email-icon.fa.fa-envelope.fa-fw.invalid-icon(aria-hidden='true')
+                                    input#email.form-control(type='text', name='email' required)
+                        .form-group
+                            p.control-label Password
+                            .cols-sm-10
+                                .input-group
+                                    span.input-group-addon
+                                        i#password-icon.fa.fa-lock.fa-fw.invalid-icon(aria-hidden='true')
+                                    input#password.form-control(type='password', name='password' required)
+                        .form-group
+                            p.control-label Confirm Password
+                            .cols-sm-10
+                                .input-group
+                                    span.input-group-addon
+                                        i#confirm-icon.fa.fa-lock.fa-fw.invalid-icon(aria-hidden='true')
+                                    input#confirm.form-control(type='password', name='confirm' required)
+                        .form-group
+                            p.control-label Role
+                            .cols-sm-10
+                                .input-group
+                                    span.input-group-addon
+                                        i#role-icon.fa.fa-user-md.fa-fw.invalid-icon(aria-hidden='true')
+                                    select#role.form-control(name="role" required)
+                                        option(value="")
+                                        option(value="client") Client
+                                        option(value="admin") Sys Admin
+                                        option(value="admin") Admin
+                        .form-group
+                            p.control-label Database Privileges
+                            .cols-sm-10
+                                .input-group
+                                    span.input-group-addon
+                                        i#database-icon.fa.fa-database.fa-fw.invalid-icon(aria-hidden='true')
+                                    select#database.form-control(name='database' required)
+                                        option(value="") 
+                                        option(value="Novas_vn") Novas_vn
+                                        option(value="UrbSense_Monitor") UrbSense_Monitor
+                                        option(value="admin") admin
+                                        option(value="mahendra") mahendra
+                                        option(value="inari_library") inari_library
+                        .form-group
+                            p.control-label Database Collections
+                            .cols-sm-10
+                                .input-group
+                                    span.input-group-addon
+                                        i#collection-icon.fa.fa-list-ul.fa-fw.invalid-icon(aria-hidden='true')
+                                    input#collections.form-control(type="text", name="collections" required)
+                        .form-group
+                            button#button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit' disabled="true") Register
+
+                .col-lg-4
+                    .aro-pswd_info
+                        #pswd_info
+                            h4 Password Requirements
+                            ul
+                                li#letter.invalid
+                                    | At least 
+                                    strong one letter
+                                li#capital.invalid
+                                    | At least 
+                                    strong one capital letter
+                                li#number.invalid
+                                    | At least 
+                                    strong one number
+                                li#length.invalid
+                                    | Be at least 
+                                strong 8 characters
+                        #confirm_info
+                            h4 Confirm Requirements
+                            ul
+                                li#match.invalid
+                                    | Passwords 
+                                    strong must 
+                                    | match
+                        #email_info
+                            h4 Email Requirements
+                            ul
+                                li#email_format.invalid
+                                    | Correctly Formatted
+    .padding-spacer
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js')
+    script(src='/../js/passport/registration-validation.js')
